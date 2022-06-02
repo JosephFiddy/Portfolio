@@ -115,6 +115,10 @@ body {
     }
 }
 
+.navbar-nav .li {
+    border: 1px solid red;
+}
+
 @media only screen and (min-width: 768px) {
     .lead-paragraph {
         font-size: 18px;
@@ -289,7 +293,7 @@ body {
 /* About me */
 
 #about-me {
-    padding: 80px 0 270px; 
+    padding: 80px 0 340px; 
 }
 .about-me-content {
     /* opacity: 0; */
@@ -303,6 +307,10 @@ body {
     display: block;
     /* animation: slide-up 1s ease forwards; */
     font-size: 2.45rem;
+}
+
+.about-me-content .custom-button {
+    margin-bottom: 20px;
 }
 
 
@@ -391,6 +399,12 @@ body {
 }
 
 /* btb site card */
+.btb-site-card {
+    background: #0e1417;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #0e1417, #162129);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #0e1a20,#162129); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
 .btb-site-card .card-title:hover {
     transition: all 0.4s;
     color: #E06D06;
@@ -399,6 +413,19 @@ body {
 .btb-site-card .bar {
     background-color: #E06D06;
 }
+
+.btb-site-card .custom-button {
+    color: #E06D06;
+    border: 1px solid #E06D06;
+} 
+
+.btb-site-card .custom-button:hover {
+    background-color: #23333b79;
+    transition: .2s;
+
+    /* background */
+}
+
 /* /btb site card */
 
 /* portfolio site card */

@@ -1,10 +1,13 @@
-// function getOffset(el) {
-//     const rect = el.getBoundingClientRect();
-//     return {
-//       left: rect.left + window.scrollX,
-//       top: rect.top + window.scrollY
-//     };
-//   }
+// Check element is inside viewport
+var isInViewport = function (elem, bottomOffset=0) {
+  var bounding = elem.getBoundingClientRect();
+  return (
+      bounding.top >= 0 &&
+      bounding.left >= 0 &&
+      bounding.bottom + bottomOffset <= (window.innerHeight || document.documentElement.clientHeight) &&
+      bounding.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+};
 
 //Navbar show on scroll effect
 const navbar = document.querySelector(".main-nav");
@@ -13,20 +16,32 @@ let lastScrollY = 0;
 window.addEventListener("scroll", function () {
   let currentScrollY = window.scrollY;
   
-  if (currentScrollY > lastScrollY){  
+  if (currentScrollY > lastScrollY){  //scrolling down
     navbar.classList.add("navbar-hide");
-    console.log('going down');
   }
-  else {
+  else { //scrolling up
     navbar.classList.remove("navbar-hide");
-    console.log('going up');
-
   }
 
   lastScrollY = currentScrollY;
-
-
 })
+
+// add .active to current navigation section
+    // const navLinks = document.querySelectorAll(".navbar-nav li a"); // get all the nav link here
+    // let idSection2 = navLinks[0].getAttribute('href');
+
+    // window.addEventListener("scroll", function () {
+    //   for(var i=0; i<navLinks.length; i++){
+    //     const idSection = document.querySelector(navLinks[i].getAttribute("href"));
+    //     if (idSection != null){
+    //       if (isInViewport(idSection)) {
+    //         console.log(i + " is in viewport!");
+    //         navLinks[i].classList.toggle = 'green';
+    //         activeNav = i;  
+    //       }
+    //     }
+    //   }
+    // })
 
 
 // paralax squares
@@ -36,8 +51,6 @@ squaresContainer.style.bottom = window.pageYOffset * -0.55 +"px";
 window.addEventListener("scroll", function () {
     let scrollOffset = window.pageYOffset; //return the scroll amount in px
     squaresContainer.style.bottom = (scrollOffset * -0.55) + "px";
-    // Still jumps at start of scroll, need to include it's relative pos to viewport
-    // position of squaresContainer from the top of viewport is: (getOffset(squaresContainer).top - scrollOffset)
 })
 
 
@@ -87,18 +100,6 @@ document.addEventListener("DOMContentLoaded", function() { // On DOM Load initia
 
 
 // Animations
-
-// Check element is inside viewport
-var isInViewport = function (elem, bottomOffset=0) {
-  var bounding = elem.getBoundingClientRect();
-  return (
-      bounding.top >= 0 &&
-      bounding.left >= 0 &&
-      bounding.bottom + bottomOffset <= (window.innerHeight || document.documentElement.clientHeight) &&
-      bounding.right <= (window.innerWidth || document.documentElement.clientWidth)
-  );
-};
-
 
 // trigger Slideup on scroll animations
 const sectionArea = document.querySelectorAll('.section-area'); 
