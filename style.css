@@ -141,15 +141,13 @@ body {
 /* Main content */
 .main-content-container {
      display: flex;  /* not needed? */
-    height: 90vh;  
-    padding-top: 70px;
+     padding-top: 70px;
 }
 
 .main-text-container {
     /* border: 1px solid red; */
-    display: inline-block; /* not needed? */
-    text-align: left; /* not needed? */
     margin-top: 13vh;
+    margin-bottom: 300px;
 }
 
 .main-text-container h1 {
@@ -289,15 +287,14 @@ body {
         opacity: 0.6;
     }
 }
-
-
 /* /floating squares */
+
 
 
 /* About me */
 
 #about-me {
-    padding: 80px 0 340px; 
+    padding: 0px 0 200px; 
 }
 .about-me-content {
     /* opacity: 0; */
@@ -306,11 +303,8 @@ body {
 } 
 
 
-/* make the child (header) elements hidden on their own */
 .about-me-content h1 {
-    /* opacity: 1; */
     display: block;
-    /* animation: slide-up 1s ease forwards; */
     font-size: 2.45rem;
 }
 
