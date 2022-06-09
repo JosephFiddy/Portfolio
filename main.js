@@ -121,7 +121,7 @@ window.addEventListener('scroll', function () {
 
   // animate cards when visible
   for(var i=0; i<cards.length; i++){ //for each card
-    if (isInViewport(cards[i], 10)) {
+    if (isInViewport(cards[i], 70)) {
       cards[i].style.animation = 'slideup 0.4s linear forwards'
     }
   }

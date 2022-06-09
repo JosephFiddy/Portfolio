@@ -66,11 +66,14 @@ body {
       background: #141E30;  /* fallback for old browsers */
       background: -webkit-linear-gradient(to right, #141E30, #0B0C21);  /* Chrome 10-25, Safari 5.1-6 */
       background: linear-gradient(to right, #141E30, #0B0C21); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
 
+  @media only screen and (min-width: 998px){
+    .navbar-hide {
+        transform: translateY(-75px);
+    }
   }
-  .navbar-hide {
-      transform: translateY(-75px);
-  }
+  
   /* /navbar */
 
   /* Section styling */
@@ -128,12 +131,6 @@ body {
     }
     p {
         font-size: 18px;
-    }
-}
-
-@media only screen and (min-width: 922px) {
-    .lead-paragraph {
-        /* font-size: 20px; */
     }
 }
 
@@ -287,6 +284,13 @@ body {
     }
 }
 
+@media only screen and (max-width: 998px) {
+    .squares-container {
+        opacity: 0.6;
+    }
+}
+
+
 /* /floating squares */
 
 
@@ -439,6 +443,32 @@ body {
 }
 /* /portfolio site card */
 
+/* Staff Portal card*/
+.staff-portal-card {
+    color: #FFD400;
+}
+.staff-portal-card {
+    background: #0e1417;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #1a1919, #1a2024);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #1a1919,#1a2024); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+.staff-portal-card .card-title:hover {
+    transition: all 0.4s;
+    color: #FFD400;
+} 
+
+.staff-portal-card .bar {
+    background-color: #FFD400;
+}
+
+.staff-portal-card .custom-button {
+    color: #FFD400;
+    border: 1px solid #FFD400;
+} 
+
+
+/* /Staff Portal card */
 
 /* /My Portfolio */
 
