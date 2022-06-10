@@ -1,5 +1,5 @@
 // Check element is inside viewport
-var isInViewport = function (elem, bottomOffset=0) {
+var isInViewport = function (elem, bottomOffset = 0) {
   var bounding = elem.getBoundingClientRect();
   return (
       bounding.top >= 0 &&
@@ -25,23 +25,6 @@ window.addEventListener("scroll", function () {
 
   lastScrollY = currentScrollY;
 })
-
-// add .active to current navigation section
-    // const navLinks = document.querySelectorAll(".navbar-nav li a"); // get all the nav link here
-    // let idSection2 = navLinks[0].getAttribute('href');
-
-    // window.addEventListener("scroll", function () {
-    //   for(var i=0; i<navLinks.length; i++){
-    //     const idSection = document.querySelector(navLinks[i].getAttribute("href"));
-    //     if (idSection != null){
-    //       if (isInViewport(idSection)) {
-    //         console.log(i + " is in viewport!");
-    //         navLinks[i].classList.toggle = 'green';
-    //         activeNav = i;  
-    //       }
-    //     }
-    //   }
-    // })
 
 
 // paralax squares
@@ -106,9 +89,10 @@ const sectionArea = document.querySelectorAll('.section-area');
 const cards = document.querySelectorAll('.portfolio-grid > *');
 
 window.addEventListener('scroll', function () {
-  // animatate sections when visible
+  const bottomOffset = screen.height > 950 ? 50 : -300;
+
   for(var i=0; i<sectionArea.length; i++){ //foreach section area
-    if (isInViewport(sectionArea[i], 50)) {
+    if (isInViewport(sectionArea[i], bottomOffset)) {
       for(var x=0; x<sectionArea[i].children.length; x++){ //for each child of the section area
         let sectionChild = sectionArea[i].children[x];
           // sectionChild.style.animation = 'slideup 0.2s linear 0.25s forwards';
@@ -118,10 +102,9 @@ window.addEventListener('scroll', function () {
     }
   }
 
-
   // animate cards when visible
   for(var i=0; i<cards.length; i++){ //for each card
-    if (isInViewport(cards[i], 70)) {
+    if (isInViewport(cards[i], bottomOffset)) {
       cards[i].style.animation = 'slideup 0.4s linear forwards'
     }
   }
@@ -130,6 +113,5 @@ window.addEventListener('scroll', function () {
 
 }, false);
 
-// console.log(cards[0]);
 
 
