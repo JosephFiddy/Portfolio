@@ -41,7 +41,7 @@ window.addEventListener("scroll", function () {
 const typedTextSpan = document.querySelector(".typed-text");
 const cursorSpan = document.querySelector(".cursor");
 
-const textArray = [" HTML, CSS and JavaScript.", " PHP and SQL.", " Bootstrap.", " HTML, CSS, JavaScript, SQL and PHP."];
+const textArray = [" HTML, CSS and JavaScript.", " C# .Net Core and SQL.", " Bootstrap.", " HTML, CSS, JavaScript, SQL and C#"];
 const typingDelay = 125;
 const erasingDelay = 80;
 const newTextDelay = 2000; // Delay between current and next text
